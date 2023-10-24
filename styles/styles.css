@@ -61,11 +61,11 @@ body{
 }
 /*decima parte*/
 
-#luisPosa{
+#chismeNutrientes{
     font-style: italic;
     color: #FF0000;
 }
-#sensual{
+#enterateDelChisme{
     font-style: italic;
 }
 #imagenCensura{
@@ -81,4 +81,7 @@ body{
 #saberCuidadoNutricional,#ventaIlegal{
     font-size: 10px;
     font-style: italic;
+}
+#doceavaParte{
+    background-color: #EBEADB;
 }
