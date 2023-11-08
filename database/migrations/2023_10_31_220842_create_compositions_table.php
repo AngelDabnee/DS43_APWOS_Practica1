@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('compositions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('composition_macro',['ps','hc','lip'])->nullValue();
-            $table->enum('composition_micro',['vitamin','mineral'])->nullValue();
+            $table->enum('composition_macro',['ps','hc','lip'])->nullable();
+            $table->string('micro')->nullable();
             $table->timestamps();
         });
     }
