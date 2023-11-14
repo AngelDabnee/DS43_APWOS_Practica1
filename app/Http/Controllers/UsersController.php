@@ -4,24 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class NutrientController extends Controller
+class UsersController extends Controller
 {
     public function index(){
-        return view('nutrients.index');
+        return view('');
     }
     public function view(){
-        return view('nutrients.view');
+        return view('');
     }
     public function update(){
-        return view('nutrients.update');
+        return view('');
     }
     public function delete(){
-        return view('nutrients.delete');
+        return view('');
     }
     public function terminate(){
-        return view('nutrients.terminate');
+        return view('');
     }
     public function create(){
-        return view('nutrients.create');
+        return view('');
     }
 }
