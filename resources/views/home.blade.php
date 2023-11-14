@@ -17,6 +17,13 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <div class="card mt-3">
+                <div class="card-header">{{ __('Nutrientes') }}</div>
+
+                <div class="card-body">
+                    <div class = "" ><a href="#">Nutrientes</a></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

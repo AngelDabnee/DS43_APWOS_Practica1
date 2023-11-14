@@ -320,12 +320,13 @@
                     <h1 id = "tituloQueSonSuplementos" class="title">¿Qué son los Suplementos</h1>
                     <hr class="hr-white">
                     <p id = "parrafoSuplementos" class="light-text">Se definen como aquellos productos a base de hierbas, extractos vegetales, alimentos tradicionales, deshidratados o concentrados de frutas, adicionados o no, de vitaminas o minerales, que se puedan presentar en forma farmacéutica y cuya finalidad de uso es incrementar la ingesta dietética total, complementarla o suplir algún componente, no pudiendo estar compuestos únicamente de vitaminas y minerales.</p>
+                    <hr class="hr-orange-lg">
                     <h2 id="tituloCuandoConsumirlos" class="title">¿Cuando Consumirlos?</h2>
                     <p id = "parrafoConsumirlos" class="light-text">Los complementos alimenticios sólo están indicados cuando la dieta no pueda satisfacer por completo los requerimientos nutricionales.
                     </p>
                 </div>
                 <div class="col-md-2 my-5 ms-auto align-self-end right"> 
-                    <button id = "btnSuplementos" class="btn btn-outline-info"><a class = "nav-link active text-black" aria-current="page" href="#">Conoce Más</a>
+                    <button id = "btnSuplementos" class="btn btn-outline-danger"><a class = "nav-link active text-black" aria-current="page" href="#">Conoce Más</a>
                     </button>
                 </div>
             </div>
