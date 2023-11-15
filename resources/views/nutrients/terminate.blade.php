@@ -1,8 +1,8 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 @section('title','terminate')
 
-@section('content')
+@section('body')
 <h1>Borrado</h1>
 
 @endsection

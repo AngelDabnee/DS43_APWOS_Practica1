@@ -3,7 +3,8 @@
 use App\Http\Controllers\NutrientController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\CompositionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,28 +35,39 @@ Route::prefix('/users')-> group(function () {
 
 //nutrients, este jalará id, name, type (donde macro o micro) descripción. 
 Route::prefix('/nutrients')-> group(function () {
-    Route::get('', [NutrientController::class, 'index'])->name('nutrients.view');
+    Route::get('/', [NutrientController::class, 'index'])->name('nutrients.list');
     Route::get('/view/{id}', [NutrientController::class, 'view'])->name('nutrients.view');
     Route::get('/update/{id}', [NutrientController::class, 'update'])->name('nutrients.update');
     Route::get('/delete/{id}', [NutrientController::class, 'delete'])->name('nutrients.delete');
     Route::get('/terminate/{id}', [NutrientController::class, 'terminate'])->name('nutrients.terminate');
     Route::get('/create', [NutrientController::class, 'create'])->name('nutrients.create');
+    Route::post('/create', [NutrientController::class, 'store'])->name('nutrients.store');//es store de almacenamiento, no de tienda
+
 });
 
 //hay que actualizar el nutrientController por un macroController para estos, hace lo mismo con vitaminas, alimentos
-Route::prefix('/macro')-> group(function () {
+Route::prefix('/composition')-> group(function () {
+    Route::get('/', [CompositionController::class, 'index'])->name('composition.list');
+    Route::get('/view{id}', [CompositionController::class, 'view'])->name('composition.view');
+    Route::get('/update{id}', [CompositionController::class, 'update'])->name('composition.update');
+    Route::get('/delete{id}', [CompositionController::class, 'delete'])->name('composition.delete');
+    Route::get('/terminate{id}', [CompositionController::class, 'terminate'])->name('composition.terminate');
+    Route::get('/create', [CompositionController::class, 'create'])->name('composition.create');
+    Route::get('/delete', [CompositionController::class, 'store'])->name('composition.store');
 
-    Route::get('/proteinas', [NutrientController::class, 'index'])->name('Proteinas');
-    Route::get('/hc', [NutrientController::class, 'index'])->name('HC');
-    Route::get('/lip', [NutrientController::class, 'index'])->name('Lipidos');
 });
 
-Route::prefix('/alimentos')-> group(function () {
+Route::prefix('/foods')-> group(function () {
 
-    Route::get('/gruposAlimentos', [NutrientController::class, 'index'])->name('grupoAlimentos');
-    Route::get('/composicionAlimentos', [NutrientController::class, 'index'])->name('composicionAlimentos');
-    Route::get('/lip', [NutrientController::class, 'index'])->name('Lipidos');
+    Route::get('/', [FoodController::class, 'index'])->name('food.list');
+    Route::get('/view{id}', [FoodController::class, 'view'])->name('food.view');
+    Route::get('/update{id}', [FoodController::class, 'update'])->name('food.update');
+    Route::get('/delete{id}', [FoodController::class, 'delete'])->name('food.delete');
+    Route::get('/terminate{id}', [FoodController::class, 'terminate'])->name('food.terminate');
+    Route::get('/create', [FoodController::class, 'create'])->name('food.create');
+    Route::get('/delete', [FoodController::class, 'store'])->name('food.store');
 });
+
 Route::prefix('/suplementos')-> group(function () {
 
     Route::get('/suplementos', [NutrientController::class, 'index'])->name('suplementos');
