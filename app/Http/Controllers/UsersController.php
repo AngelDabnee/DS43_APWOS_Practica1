@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -26,6 +27,8 @@ class UsersController extends Controller
         return view('users.terminate');
     }
     public function create(){
-        return view('users.create');
+        $permissions = Permission::all();
+
+        return view('users.create',compact('permissions'));
     }
 }
