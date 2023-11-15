@@ -31,6 +31,8 @@ Route::prefix('/users')-> group(function () {
     Route::get('/delete/{id}', [UsersController::class, 'delete'])->name('users.delete');
     Route::get('/terminate/{id}', [UsersController::class, 'terminate'])->name('users.terminate');
     Route::get('/create', [UsersController::class, 'create'])->name('users.create');
+    Route::post('/create', [UsersController::class, 'store'])->name('users.store');
+
 });
 
 //nutrients, este jalará id, name, type (donde macro o micro) descripción. 
@@ -41,7 +43,7 @@ Route::prefix('/nutrients')-> group(function () {
     Route::get('/delete/{id}', [NutrientController::class, 'delete'])->name('nutrients.delete');
     Route::get('/terminate/{id}', [NutrientController::class, 'terminate'])->name('nutrients.terminate');
     Route::get('/create', [NutrientController::class, 'create'])->name('nutrients.create');
-    Route::post('/create', [NutrientController::class, 'store'])->name('nutrients.store');//es store de almacenamiento, no de tienda
+    Route::post('/create', [NutrientController::class, 'store'])->name('nutrients.store');//es es pal insert además, store de almacenamiento, no de tienda
 
 });
 

@@ -8,7 +8,7 @@ use App\Models\Food;
 class FoodController extends Controller
 {
     public function index(){
-        $food = Food::all();
+        $foods = Food::all();
         return view('foods.index',compact('foods'));
     }
     public function view($id){

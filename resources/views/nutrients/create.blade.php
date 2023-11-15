@@ -10,7 +10,8 @@
             <img src="https://thefoodtech.com/wp-content/uploads/2023/07/alimentos-saludables.jpg" class="img-fluid">
         </div>
         <div class="col-5 card text-center">
-            <form action="POST">
+            <form action="POST" method="{{route('nutrients.store')}}">
+                @csrf
                 <label>Alimento</label>
                 <input type="text" name="name" class="form-control">
                 <label>Composición Nutricional de MacroNutriente</label>

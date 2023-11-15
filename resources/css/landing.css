@@ -206,3 +206,8 @@
 #doceavaParte{
     background-color: #EBEADB;
 }
+/*CREATE.BLADE.PHP SE USUARIOS*/
+#addImgUser{
+    width: 250px;
+    height: 250px;
+}

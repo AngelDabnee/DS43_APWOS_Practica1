@@ -12,19 +12,20 @@ class UsersController extends Controller
         $users = User::all();
         return view('users.index',compact('users'));
     }
-    public function view(){
-        return view('');
+    public function view($id){
+        $user = User::findOrFail($id);
+        return view('users.view',compact('user'));
     }
     public function update(){
-        return view('');
+        return view('users.update');
     }
     public function delete(){
-        return view('');
+        return view('users.delete');
     }
     public function terminate(){
-        return view('');
+        return view('users.terminate');
     }
     public function create(){
-        return view('');
+        return view('users.create');
     }
 }
