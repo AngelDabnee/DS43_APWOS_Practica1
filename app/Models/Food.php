@@ -9,4 +9,7 @@ class Food extends Model
 {
     use HasFactory;
     protected $table = 'foods';
+    public function composition(){
+        return $this->belongsTo(Composition::class);
+    }
 }

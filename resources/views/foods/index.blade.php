@@ -26,8 +26,8 @@
                                 <td>{{$food->id}}</td>
                                 <td>{{$food->name}}</td>
                                 <td>{{$food->description}}</td>
-                                <td><a class = "btn btn-info" href="{{route('foods.view',$food->id)}}">Ver</a></td>
-                                <td><a class = "btn btn-danger" href="{{route('foods.delete',$food->id)}}">Eliminar</a></td>
+                                <td><a class = "btn btn-info" href="{{route('foods.view',$food)}}">Ver</a></td>
+                                <td><a class = "btn btn-danger" href="{{route('foods.delete',$food)}}">Eliminar</a></td>
                             </tr>
                             @endforeach
                         </tbody>

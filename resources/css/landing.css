@@ -273,3 +273,46 @@
     align-items: center;
     margin-top: 20px;
 }
+
+
+/*todas las CAAAARDS*/
+/* Estilo para la tarjeta de imagen */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo para la tabla dentro de la tarjeta */
+.card table {
+    width: 100%;
+    margin-bottom: 0; /* Evitar el margen inferior predeterminado de la tabla */
+}
+
+/* Estilo para las celdas de la tabla */
+.card table td, .card table th {
+    text-align: center;
+}
+
+/* Estilo para el encabezado de la tabla */
+.card table thead {
+    background-color: #f8f9fa; /* Color de fondo del encabezado */
+}
+
+/* Estilo para el cuerpo de la tabla */
+.card table tbody {
+    background-color: #ffffff; /* Color de fondo del cuerpo */
+}
+
+/* Estilo para las filas impares de la tabla */
+.card table tbody tr:nth-child(odd) {
+    background-color: #f3f4f5; /* Color de fondo para filas impares */
+}

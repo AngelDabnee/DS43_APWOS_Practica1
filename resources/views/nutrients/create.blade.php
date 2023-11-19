@@ -5,7 +5,10 @@
 @section('body')
 <div class="container">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <h1 class="text-center py-2">Añadir uno Nuevo.</h1>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a class = "btn btn-success" href="{{route ('nutrients.list')}}">Regresar</a>
+        <h1 class="text-center mb-0">Añadir al Alimento</h1>
+    </div>
     <hr class="hr-orange-lg">
     <div class="row mt-2 text-center">
         <div class="col-7 text-center mb-2">

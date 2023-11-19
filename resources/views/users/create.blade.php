@@ -6,9 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <div class="container-fluid">
         <div class="row">
-            <h1 class="text-center py-2">Usuarios.</h1>
-            <hr class="hr-orange-lg">
-            <h3 class="">Añadir Nuevo.</h3>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <a class = "btn btn-success" href="{{route ('users.list')}}">Regresar</a>
+                <h1 class="text-center mb-0">Añadir al Alimento</h1>
+            </div>
             <hr class="hr-orange-lg">
         </div>
         <div class="row">

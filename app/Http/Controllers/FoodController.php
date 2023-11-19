@@ -14,8 +14,8 @@ class FoodController extends Controller
         return view('foods.index',compact('foods','composition'));
     }
     public function view($id){
-       $foods = Food::find($id);
-        return view('foods.view',compact ('foods'));
+       $food = Food::find($id);
+        return view('foods.view',compact ('food'));
     }
     public function update($id){
         $foods = Food::find($id);
