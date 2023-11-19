@@ -1,6 +1,9 @@
 @extends('layouts.main')
+@section('title','create')
+
 @section('body')
 <div class="container">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <div class="container-fluid">
         <div class="row">
             <h1 class="text-center py-2">Usuarios.</h1>
@@ -15,7 +18,7 @@
             <div class="col-2">
             </div>
             <div class="col-6 card  text-center mb-2">
-                <form action="POST" method="{{route('users.create')}}">
+                <form action="POST" method="{{route('users.store')}}">
                     @csrf
                     <label>Nombre Completo</label>
                     <input type="text" name="name" class="form-control" placeholder="Nombre Completo" required>
@@ -32,7 +35,7 @@
                     <label>Selecciona el Nivel</label>
                     <select name="permission_id" class="form-control">
                         @foreach ($permissions as $permission)
-                            <option id = "nivelPermission" value="">{{$permission ->level}}</option>
+                            <option id = "nivelPermission" value="{{$permission->level}}">{{$permission ->level}}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
@@ -40,5 +43,6 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </div>
 @endsection

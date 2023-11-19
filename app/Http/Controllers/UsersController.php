@@ -17,8 +17,10 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         return view('users.view',compact('user'));
     }
-    public function update(){
-        return view('users.update');
+    public function update($id){
+        $user = User::findOrFail($id);
+        $permissions = Permission::all();
+        return view('users.update',compact('permissions','user'));
     }
     public function delete(){
         return view('users.delete');

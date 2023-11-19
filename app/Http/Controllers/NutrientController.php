@@ -17,8 +17,10 @@ class NutrientController extends Controller
         $nutrient = Nutrient::findOrFail($id);
         return view('nutrients.view',compact ('nutrient'));
     }
-    public function update(){
-        return view('nutrients.update');
+    public function update($id){
+        $nutrient = Nutrient::findOrFail($id);
+        $compositions = Composition::all();
+        return view('nutrients.update',compact ('compositions','nutrient'));
     }
     public function delete(){
         return view('nutrients.delete');

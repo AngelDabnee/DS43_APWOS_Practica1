@@ -25,7 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //usuarios, con el controlador de usuario. 
 Route::prefix('/users')-> group(function () {
-    Route::get('', [UsersController::class, 'index'])->name('users.view');
+    Route::get('/', [UsersController::class, 'index'])->name('users.list');
     Route::get('/view/{id}', [UsersController::class, 'view'])->name('users.view');
     Route::get('/update/{id}', [UsersController::class, 'update'])->name('users.update');
     Route::get('/delete/{id}', [UsersController::class, 'delete'])->name('users.delete');
@@ -60,14 +60,13 @@ Route::prefix('/composition')-> group(function () {
 });
 
 Route::prefix('/foods')-> group(function () {
-
-    Route::get('/', [FoodController::class, 'index'])->name('food.list');
-    Route::get('/view{id}', [FoodController::class, 'view'])->name('food.view');
-    Route::get('/update{id}', [FoodController::class, 'update'])->name('food.update');
-    Route::get('/delete{id}', [FoodController::class, 'delete'])->name('food.delete');
-    Route::get('/terminate{id}', [FoodController::class, 'terminate'])->name('food.terminate');
-    Route::get('/create', [FoodController::class, 'create'])->name('food.create');
-    Route::get('/delete', [FoodController::class, 'store'])->name('food.store');
+    Route::get('/', [FoodController::class, 'index'])->name('foods.list');
+    Route::get('/create', [FoodController::class, 'create'])->name('foods.create'); 
+    Route::get('/view{id}', [FoodController::class, 'view'])->name('foods.view');
+    Route::get('/update{id}', [FoodController::class, 'update'])->name('foods.update');
+    Route::get('/delete{id}', [FoodController::class, 'delete'])->name('foods.delete');
+    Route::get('/terminate{id}', [FoodController::class, 'terminate'])->name('foods.terminate');
+    Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
 });
 
 Route::prefix('/suplementos')-> group(function () {

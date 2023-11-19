@@ -206,8 +206,70 @@
 #doceavaParte{
     background-color: #EBEADB;
 }
+
+/*Nutrientes*/
+#opcionNutrientes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
 /*CREATE.BLADE.PHP SE USUARIOS*/
 #addImgUser{
     height: 350px;
     width: 350px;
+}
+#imgUsuarios{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Le estableceré style a la tabla de usuarios. Este mismo estilo predeterminado para las demás tablas. */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+}
+
+.table th, .table td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: center; 
+}
+
+#imgUsuarios {
+    width: 50px; 
+    height: 50px; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+.table td a {
+    margin-right: 5px;
+}
+/*Modificar usuarios, este es el boton */
+#opcionesUsuario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+#accionesNutrientes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*De aquí en adelant ees para foods*/
+#opcionesFood{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 }

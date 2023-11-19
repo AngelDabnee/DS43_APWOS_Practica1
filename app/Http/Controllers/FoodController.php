@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Composition;
 use App\Models\Food;
 
 
@@ -9,22 +10,26 @@ class FoodController extends Controller
 {
     public function index(){
         $foods = Food::all();
-        return view('foods.index',compact('foods'));
+        $composition = Composition::all();
+        return view('foods.index',compact('foods','composition'));
     }
     public function view($id){
-       
-        return view('nutrients.view',compact ('nutrient'));
+       $foods = Food::find($id);
+        return view('foods.view',compact ('foods'));
     }
-    public function update(){
-        return view('nutrients.update');
+    public function update($id){
+        $foods = Food::find($id);
+        return view('foods.update',compact('foods'));
     }
     public function delete(){
-        return view('nutrients.delete');
+        return view('foods.delete');
     }
     public function terminate(){
-        return view('nutrients.terminate');
+        return view('foods.terminate');
     }
     public function create(){
+        $compositions = Composition::all();  
+        return view('foods.create',compact('compositions'));
         
     }
 }
