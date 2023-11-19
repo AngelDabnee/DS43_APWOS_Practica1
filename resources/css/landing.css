@@ -316,3 +316,10 @@
 .card table tbody tr:nth-child(odd) {
     background-color: #f3f4f5; /* Color de fondo para filas impares */
 }
+
+
+/*img pa la actualizada de foods*/
+#imgActualizarFood{
+    width: 350px;
+    height: 250px;
+}

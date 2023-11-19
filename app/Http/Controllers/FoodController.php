@@ -19,7 +19,8 @@ class FoodController extends Controller
     }
     public function update($id){
         $foods = Food::find($id);
-        return view('foods.update',compact('foods'));
+        $compositions = Composition::all();
+        return view('foods.update',compact('foods','compositions'));
     }
     public function delete(){
         return view('foods.delete');
