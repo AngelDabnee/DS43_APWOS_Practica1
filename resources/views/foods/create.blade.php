@@ -23,7 +23,7 @@
                         <label>Descripción</label>
                         <input type="text" name = "description" class="form-control" placeholder="Descripción" required>
                         <label>Composición MacroNutriente</label>
-                        <select name="composition_id" id="" required>
+                        <select name="composition_id" id="" class = "form-control" required>
                             <option value="">Selecciona la Composición</option>
                             @foreach ($compositions as $composition)
                                 <option value="{{$composition->micro}}">{{$composition->micro}}</option>

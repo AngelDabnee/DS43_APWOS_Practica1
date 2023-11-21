@@ -29,6 +29,7 @@
                                 <option value="{{$composition->micro}}">{{$composition->micro}}</option>
                             @endforeach
                         </select>
+                        <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
                     </form>
                 </div>
             </div>
@@ -36,7 +37,6 @@
                 <img id = "imgActualizarFood" class = "img-fluid" src="https://www.laloncherademihijo.org/padres/images/47/1.jpg" alt="">
             </div>
         </div>
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </div>

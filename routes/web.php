@@ -5,6 +5,11 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\CompositionController;
+use App\Http\Controllers\FoodGroupController;
+use App\Http\Controllers\SuplementController;
+use App\Http\Controllers\TypeSuplement;
+use App\Http\Controllers\TypeSuplementController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,7 +74,35 @@ Route::prefix('/foods')-> group(function () {
     Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
 });
 
-Route::prefix('/suplementos')-> group(function () {
+Route::prefix('/groups')-> group(function () {
+    Route::get('/', [FoodGroupController::class, 'index'])->name('groups.list');
+    Route::get('/create', [FoodGroupController::class, 'create'])->name('groups.create'); 
+    Route::get('/view/{id}', [FoodGroupController::class, 'view'])->name('groups.view');
+    Route::get('/update/{id}', [FoodGroupController::class, 'update'])->name('groups.update');
+    Route::get('/delete/{id}', [FoodGroupController::class, 'delete'])->name('groups.delete');
+    Route::get('/terminate/{id}', [FoodGroupController::class, 'terminate'])->name('groups.terminate');
+    Route::post('/create', [FoodGroupController::class, 'store'])->name('groups.store');
+});
 
-    Route::get('/suplementos', [NutrientController::class, 'index'])->name('suplementos');
+
+Route::prefix('/suplements')-> group(function () {
+
+    Route::get('/', [SuplementController::class, 'index'])->name('suplements.list');
+    Route::get('/create', [SuplementController::class, 'create'])->name('suplements.create'); 
+    Route::get('/view/{id}', [SuplementController::class, 'view'])->name('suplements.view');
+    Route::get('/update/{id}', [SuplementController::class, 'update'])->name('suplements.update');
+    Route::get('/delete/{id}', [SuplementController::class, 'delete'])->name('suplements.delete');
+    Route::get('/terminate/{id}', [SuplementController::class, 'terminate'])->name('suplements.terminate');
+    Route::post('/create', [SuplementController::class, 'store'])->name('suplements.store');
+});
+
+Route::prefix('/typesuplements')-> group(function () {
+
+    Route::get('/', [TypeSuplementController::class, 'index'])->name('typesuplements.list');
+    Route::get('/create', [TypeSuplementController::class, 'create'])->name('typesuplements.create'); 
+    Route::get('/view/{id}', [TypeSuplementController::class, 'view'])->name('typesuplements.view');
+    Route::get('/update/{id}', [TypeSuplementController::class, 'update'])->name('typesuplements.update');
+    Route::get('/delete/{id}', [TypeSuplementController::class, 'delete'])->name('typesuplements.delete');
+    Route::get('/terminate/{id}', [TypeSuplementController::class, 'terminate'])->name('typesuplements.terminate');
+    Route::post('/create', [TypeSuplementController::class, 'store'])->name('typesuplements.store');
 });

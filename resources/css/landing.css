@@ -323,3 +323,9 @@
     width: 350px;
     height: 250px;
 }
+
+/*imagenes carrusel de grupos de alimentos*/
+#imagenCarruselGrupos1,#imagenCarruselGrupos2,#imagenCarruselGrupos3{
+    width: 250px;
+    height: 350px;
+}
