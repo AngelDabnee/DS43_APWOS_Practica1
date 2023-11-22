@@ -13,6 +13,7 @@ class SuplementController extends Controller
         return view('suplements.index',compact('suplements'));
     }
     public function view($id){
+        $suplements = Suplement::all();
         return view('suplements.view',compact ('suplements'));
     }
     public function update($id){

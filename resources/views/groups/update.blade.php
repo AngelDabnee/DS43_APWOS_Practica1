@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mt-3">
-                <a class = "btn btn-success" href="{{route ('groups.view',$foods)}}">Regresar</a>
+                <a class = "btn btn-success" href="{{route ('groups.view',$groupFood)}}">Regresar</a>
                 <h1 class="text-center mb-0">Actualizar al Grupo</h1>
             </div>
         </div>
@@ -21,8 +21,8 @@
                     <label>Selecciona el Alimento Relacionado</label>
                     <select class = "form-control" name="food_id" id="">
                         <option>Selecciona el Alimento</option>
-                        @foreach ($foods as $food )
-                            <option value="{{$groupFood->food->id}}">{{$groupFood->food->name}}</option>
+                        @foreach ($foods as $food)
+                            <option value="{{$foods->id}}">{{$foods->name}}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>

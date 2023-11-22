@@ -11,7 +11,8 @@ class UsersController extends Controller
 {
     public function index(){
         $users = User::all();
-        return view('users.index',compact('users'));
+        $permissions = Permission::all();
+        return view('users.index',compact('users','permissions'));
     }
     public function view($id){
         $user = User::findOrFail($id);
