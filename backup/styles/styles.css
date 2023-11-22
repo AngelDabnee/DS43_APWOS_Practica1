@@ -1,0 +1,94 @@
+/*Recuerda Cambiarle el Estilo a Todo*/
+body{
+    background-color: #fafaf6;
+}
+/*Imagenes*/
+
+/*carrucel*/
+#carouselExampleCaptions{
+    background-color: #f5f4ed;
+}
+/*EStilo de las cards*/
+#cardCanela{
+    width: 400px;
+    height: 550px;
+    background-color: #f5f4ed;
+}
+
+#cardFibra{
+    width: 400px;
+    height: 550px;
+    background-color: #f5f4ed;
+}
+/*imagen*/
+#beneficiosDeFibra{
+    height: 300px;
+}
+#cardJamaica{
+    width: 450px;
+    height: 550px;
+    background-color: #f5f4ed;
+
+}
+/*imagen*/
+#beneficioDeJamaica{
+    height: 200px;
+}
+/*proteina HC y lp septima seccion*/
+#tiposDeGrasa{
+    width: 2050px;
+}
+#consumoDeProteina{
+    width: 350px;
+}
+
+/*octaba parte, beneficios de los micro*/
+/*imagen*/
+#beneficiosDelAcidoFolico{
+    height: 400px;
+}
+/*card*/
+#acidoFolico,#beneficiosDeBDoce,#beneficioDeHierro{
+    height: 800px;
+    background-color: #f5f4ed;
+}
+/*Novena Parte Suplementación (parte de base de datos)*/
+#consumoDeCreatina{
+    height: 400px;
+}
+#esElHero{
+    background-color: #fdfcce;
+}
+/*decima parte*/
+
+<<<<<<< HEAD:backup/styles/styles.css
+#enterate{
+=======
+#chismeNutrientes{
+>>>>>>> main:styles/styles.css
+    font-style: italic;
+    color: #FF0000;
+}
+#enterateDelChisme{
+    font-style: italic;
+}
+#primerEnterate{
+    font-family:Arial, Helvetica, sans-serif
+}
+#imagenCensura{
+    height: 250px;
+    width: 250px;
+    text-align: center;
+}
+/*onceaba*/
+#listaColumna{
+    column-count: 2;
+}
+/*doceaba*/
+#saberCuidadoNutricional,#ventaIlegal{
+    font-size: 10px;
+    font-style: italic;
+}
+#doceavaParte{
+    background-color: #EBEADB;
+}

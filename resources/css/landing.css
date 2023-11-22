@@ -1,0 +1,331 @@
+/*Recuerda Cambiarle el Estilo a Todo*/
+#color{
+    background-color: #fafaf6;
+}
+/*Imagenes*/
+#primeraParte{
+    background-color: #EBEADB;
+
+}
+.textRed {
+    color: #FF0000;
+    font-style: italic;
+    font-size: 20pt;
+    font-weight: bold;
+  }
+  
+.textRed:hover {
+    color: #0000FF;
+}
+/*Segunda Parte*/
+#tituloConocerNutricion,#titleMacro,#titleMicro,#tituloVitaminas,#tituloFruta{
+    font-style: italic;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+
+#parrafoMacro,#listaMacro,#parrafoMicro,#parrafoVitaminas,#parrafoFruta{
+    font-size: 14pt;
+}
+#btnMacro,#btnMicro{
+    font-size: 14pt;
+}
+#btnVitaminas, #btnFrutas{
+    font-size: 14pt;
+}
+
+#seccionMacro{
+    background-color: #FFFACD;
+}
+
+/*PRIMERAS CARDS*/
+#parrafoCanela,#parrafoFibra,#parrafoJamaica,#btnCanela,#btnFibra,#btnJamaica{
+    font-size: 14pt;
+
+}
+
+/*EStilo de las cards*/
+#cardCanela{
+    width: 400px;
+    height: 550px;
+    background-color: #f5f4ed;
+}
+
+#cardFibra{
+    width: 400px;
+    height: 550px;
+    background-color: #f5f4ed;
+}
+/*imagen*/
+#beneficiosDeFibra{
+    height: 300px;
+}
+#cardJamaica{
+    width: 450px;
+    height: 550px;
+    background-color: #f5f4ed;
+
+}
+/*imagen*/
+#beneficioDeJamaica{
+    height: 200px;
+}
+
+#titleSeccionMacro{
+    font-style: italic;
+    font-size: 28pt;
+    font-weight: bold;
+}
+#titleProteinas,#titleHC,#titleLp{
+    font-size: 20pt;
+    font-weight: bold;
+
+}
+#proteinasParrafo,#parrafoHC,#parrafoLip{
+    font-size: 14pt;
+
+}
+#seccionLip{
+    padding: 20px;
+}
+#btnProteina,#btnHC,#btnLip{
+    font-size: 14pt;
+
+}
+
+/*proteina HC y lp septima seccion*/
+#tiposDeGrasa{
+    width: 2050px;
+}
+#consumoDeProteina{
+    width: 350px;
+}
+
+/*parte micros*/
+#tituloMicro{
+    font-style: italic;
+    font-size: 28pt;
+    font-weight: bold;
+}
+#tituloAC,#tituloDeficiencias,#tituloHierro{
+    font-size: 20pt;
+    font-weight: bold;
+}
+#parrafoAC,#parrafoDeficiencias,#parrafoHierro,#saberMasAC,#saberMasVit,#saberMasHe{
+    font-size: 14pt;
+}
+
+/*octaba parte, beneficios de los micro*/
+/*imagen*/
+#beneficiosDelAcidoFolico{
+    height: 400px;
+}
+/*card*/
+#acidoFolico,#beneficiosDeBDoce,#beneficioDeHierro{
+    height: 800px;
+    background-color: #f5f4ed;
+}
+/*Novena Parte Suplementación (parte de base de datos)*/
+#consumoDeCreatina{
+    height: 400px;
+}
+#esElHero{
+    background-color: #98FB98;
+}
+
+#tituloSuplementos{
+    font-style: italic;
+    font-size: 28pt;
+    font-weight: bold;
+    
+}
+#tituloSuplementos:hover{
+    color: #FFFF00;
+}
+
+#tituloQueSonSuplementos,#tituloCuandoConsumirlos{
+    font-size: 20pt;
+    font-weight: bold;
+}
+#parrafoSuplementos,#parrafoConsumirlos,#btnSuplementos{
+    font-size: 14pt;
+
+}
+
+/*decima parte*/
+
+#enterate{
+    font-style: italic;
+    color: #FF0000;
+}
+
+#enterateDelChisme{
+    font-style: italic;
+
+}
+#primerEnterate{
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+#btnCTA{
+    font-size: 14pt;
+    color: #FF0000;
+    background-color: #FF0000; 
+    border: none; 
+    border-radius: 50%; 
+    width: 100px;
+    height: 100px; 
+    text-align: center;
+    line-height: 100px; 
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+/*onceaba*/
+#tituloInfoPag,#tituloContacto{
+    font-size: 14pt;
+    font-weight: bold;
+
+}
+
+#listaColumna{
+    column-count: 2;
+    font-size: 14pt;
+    font-weight: bold;
+}
+#onceaba{
+    background-color: #FFFFD1;
+}
+
+/*doceaba*/
+#saberCuidadoNutricional,#ventaIlegal{
+    font-size: 10px;
+    font-style: italic;
+}
+#doceavaParte{
+    background-color: #EBEADB;
+}
+
+/*Nutrientes*/
+#opcionNutrientes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*CREATE.BLADE.PHP SE USUARIOS*/
+#addImgUser{
+    height: 350px;
+    width: 350px;
+}
+#imgUsuarios{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Le estableceré style a la tabla de usuarios. Este mismo estilo predeterminado para las demás tablas. */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+}
+
+.table th, .table td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: center; 
+}
+
+#imgUsuarios {
+    width: 50px; 
+    height: 50px; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+.table td a {
+    margin-right: 5px;
+}
+/*Modificar usuarios, este es el boton */
+#opcionesUsuario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+#accionesNutrientes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*De aquí en adelant ees para foods*/
+#opcionesFood{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*todas las CAAAARDS*/
+/* Estilo para la tarjeta de imagen */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo para la tabla dentro de la tarjeta */
+.card table {
+    width: 100%;
+    margin-bottom: 0; /* Evitar el margen inferior predeterminado de la tabla */
+}
+
+/* Estilo para las celdas de la tabla */
+.card table td, .card table th {
+    text-align: center;
+}
+
+/* Estilo para el encabezado de la tabla */
+.card table thead {
+    background-color: #f8f9fa; /* Color de fondo del encabezado */
+}
+
+/* Estilo para el cuerpo de la tabla */
+.card table tbody {
+    background-color: #ffffff; /* Color de fondo del cuerpo */
+}
+
+/* Estilo para las filas impares de la tabla */
+.card table tbody tr:nth-child(odd) {
+    background-color: #f3f4f5; /* Color de fondo para filas impares */
+}
+
+
+/*img pa la actualizada de foods*/
+#imgActualizarFood{
+    width: 350px;
+    height: 250px;
+}
+
+/*imagenes carrusel de grupos de alimentos*/
+#imagenCarruselGrupos1,#imagenCarruselGrupos2,#imagenCarruselGrupos3{
+    width: 250px;
+    height: 350px;
+}
