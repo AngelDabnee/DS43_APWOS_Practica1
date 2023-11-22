@@ -61,7 +61,11 @@ body{
 }
 /*decima parte*/
 
+<<<<<<< HEAD:backup/styles/styles.css
 #enterate{
+=======
+#chismeNutrientes{
+>>>>>>> main:styles/styles.css
     font-style: italic;
     color: #FF0000;
 }
