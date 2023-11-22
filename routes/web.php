@@ -106,3 +106,6 @@ Route::prefix('/typesuplements')-> group(function () {
     Route::get('/terminate/{id}', [TypeSuplementController::class, 'terminate'])->name('typesuplements.terminate');
     Route::post('/create', [TypeSuplementController::class, 'store'])->name('typesuplements.store');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

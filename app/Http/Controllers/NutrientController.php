@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Nutrient;
+use App\Models\Food;
+
 use App\Http\Controllers\findOrFail;
 use App\Models\Composition;
 
@@ -20,7 +22,8 @@ class NutrientController extends Controller
     public function update($id){
         $nutrient = Nutrient::findOrFail($id);
         $compositions = Composition::all();
-        return view('nutrients.update',compact ('compositions','nutrient'));
+        $foods = Food::all();
+        return view('nutrients.update',compact ('compositions','nutrient','foods'));
     }
     public function delete(){
         return view('nutrients.delete');
@@ -30,7 +33,7 @@ class NutrientController extends Controller
     }
     public function create(){
         $compositions = Composition::all();
-
-    return view('nutrients.create',compact ('compositions'));
+        $foods = Food::all();
+    return view('nutrients.create',compact ('compositions','foods'));
     }
 }

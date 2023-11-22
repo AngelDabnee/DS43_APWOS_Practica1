@@ -5,10 +5,18 @@
 /*Imagenes*/
 #primeraParte{
     background-color: #EBEADB;
+    font-style: normal;
+    font-size: 14pt;
+    font-weight: bold;
 
 }
+#navbarNav{
+    font-style: normal;
+    font-size: 14pt;
+    font-weight: bolder;
+}
 .textRed {
-    color: #FF0000;
+    color: #1a1a1a;
     font-style: italic;
     font-size: 20pt;
     font-weight: bold;
@@ -328,4 +336,14 @@
 #imagenCarruselGrupos1,#imagenCarruselGrupos2,#imagenCarruselGrupos3{
     width: 250px;
     height: 350px;
+}
+
+#imgFoods{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 400px;
+    height: 400px;    
+    margin: auto;
+    padding: 15px;
 }

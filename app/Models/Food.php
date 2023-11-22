@@ -12,4 +12,7 @@ class Food extends Model
     public function composition(){
         return $this->belongsTo(Composition::class);
     }
+    public function goups_food(){
+        return $this->belongsTo(FoodGroup::class);
+    }
 }

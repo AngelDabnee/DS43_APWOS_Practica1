@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('suplements', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('type');
+            $table->integer('type_id');
             $table->string('effects');
             $table->string('benefits');
             $table->string('dosis')->nullable();;
