@@ -38,11 +38,8 @@
                 <label>Imagen</label>
                 <input type="text" name="img" id="" class="form-control" placeholder="Dirección URL de la Imagen" required>
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
-
             </form>
         </div>
     </div>
 </div>
-
-
 @endsection

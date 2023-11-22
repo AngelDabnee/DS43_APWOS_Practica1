@@ -34,7 +34,7 @@
                             <td>{{$suplement->dosis}}</td>
                             <td>{{$suplement->risk}}</td>
                             <td>
-                                <a class = "btn btn-info" href="{{route('suplements.view',$suplement->id)}}">Ver</a>
+                                <a class = "btn btn-info" href="{{route('suplements.view',$suplement)}}">Ver</a>
                                 <a class = "btn btn-danger" href="{{route('suplements.delete',$suplement)}}">Eliminar</a>
                             </td>
                         </tr>

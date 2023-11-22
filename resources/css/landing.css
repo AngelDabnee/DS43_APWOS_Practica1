@@ -347,3 +347,12 @@
     margin: auto;
     padding: 15px;
 }
+#tiposSuplementosIndex{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 330px;
+    height: 400px;    
+    margin: auto;
+    padding: 15px;
+}
