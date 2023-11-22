@@ -19,7 +19,7 @@
         <div class="col-2">
         </div>
         <div class="col-6 card  text-center mb-2">
-            <form action="POST" method="{{route('users.create')}}">
+            <form action="POST" method="{{route('users.update',$user)}}">
                 @csrf
                 <label>Nombre Completo</label>
                 <input type="text" name="name" class="form-control" placeholder="{{$user->name}}" required>

@@ -18,7 +18,8 @@ class SuplementController extends Controller
     }
     public function update($id){
         $suplements = Suplement::find($id);
-        return view('suplements.update',compact('suplements'));
+        $typesSuplement = TypeSuplement::all();
+        return view('suplements.update',compact('suplements','typesSuplement'));
     }
     public function delete(){
         return view('suplements.delete');
@@ -28,6 +29,7 @@ class SuplementController extends Controller
     }
     public function create(){
         $suplements = Suplement::all();
-        return view('suplements.create',compact('suplements'));
+        $types = TypeSuplement::all();
+        return view('suplements.create',compact('suplements', 'types'));
     }
 }

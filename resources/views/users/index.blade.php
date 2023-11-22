@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
-                        <td>{{$user->permission_id}}</td>
+                        <td>{{$user->permission_user}}</td>
                         <td>{{$user->phone}}</td>
                         <td>{{$user->email}}</td>
                         <td><img id = "imgUsuarios" class="img-fluid text-center" src="{{$user->image}}" alt=""></td>

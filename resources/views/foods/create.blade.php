@@ -27,8 +27,8 @@
                             <option value="{{$composition->id}}">{{$composition->name}}</option>
                         @endforeach
                     </select>
+                    <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
                 </div>
-                <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>
         </div>
         <div class="col-6 mb-3">
