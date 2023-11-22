@@ -16,7 +16,6 @@
         <div class="card px-5">
             <table id="tablaSuplements" class="table table-responsive table-bordered">
                 <thead>
-                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Tipo</th>
                     <th>Efectos</th>
@@ -28,7 +27,6 @@
                 <tbody>
                     @foreach ($suplements as $suplement)
                         <tr>
-                            <td>{{$suplement->id}}</td>
                             <td>{{$suplement->name}}</td>
                             <td>{{$suplement->type->name}}</td>
                             <td>{{$suplement->effects}}</td>
@@ -36,7 +34,7 @@
                             <td>{{$suplement->dosis}}</td>
                             <td>{{$suplement->risk}}</td>
                             <td>
-                                <a class = "btn btn-info" href="{{route('suplements.view',$suplement)}}">Ver</a>
+                                <a class = "btn btn-info" href="{{route('suplements.view',$suplement->id)}}">Ver</a>
                                 <a class = "btn btn-danger" href="{{route('suplements.delete',$suplement)}}">Eliminar</a>
                             </td>
                         </tr>
