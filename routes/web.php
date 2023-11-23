@@ -53,14 +53,15 @@ Route::prefix('/nutrients')-> group(function () {
 });
 
 //hay que actualizar el nutrientController por un macroController para estos, hace lo mismo con vitaminas, alimentos
-Route::prefix('/composition')-> group(function () {
-    Route::get('/', [CompositionController::class, 'index'])->name('composition.list');
-    Route::get('/view{id}', [CompositionController::class, 'view'])->name('composition.view');
-    Route::get('/update{id}', [CompositionController::class, 'update'])->name('composition.update');
-    Route::get('/delete{id}', [CompositionController::class, 'delete'])->name('composition.delete');
-    Route::get('/terminate{id}', [CompositionController::class, 'terminate'])->name('composition.terminate');
-    Route::get('/create', [CompositionController::class, 'create'])->name('composition.create');
-    Route::get('/delete', [CompositionController::class, 'store'])->name('composition.store');
+Route::prefix('/compositions')-> group(function () {
+    Route::get('/', [CompositionController::class, 'index'])->name('compositions.list');
+    Route::get('/create', [CompositionController::class, 'create'])->name('compositions.create');
+
+    Route::get('/view/{id}', [CompositionController::class, 'view'])->name('compositions.view');
+    Route::get('/update/{id}', [CompositionController::class, 'update'])->name('compositions.update');
+    Route::get('/delete/{id}', [CompositionController::class, 'delete'])->name('compositions.delete');
+    Route::get('/terminate/{id}', [CompositionController::class, 'terminate'])->name('compositions.terminate');
+    Route::post('/create', [CompositionController::class, 'store'])->name('compositions.store');
 
 });
 
