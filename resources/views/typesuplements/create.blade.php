@@ -8,6 +8,38 @@
             <h1 class="text-center mb-0">Añadir Nuevo Tipo de Suplemento</h1>
         </div>
         <hr class="hr-orange-lg">
+    </div> 
+    <div class="row">
+        <div class="col-5">
+            <div class="card text-center">
+                <form action="POST" method="{{route('typesuplements.store')}}">
+                    @csrf
+                    <label>Nombre del Grupo</label>
+                    <input type="text" name="name" class="form-control" required>
+                    <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card text-center px-5 mb-3">
+                <h3 class="mt-2">Ya contamos con;</h3>
+                @foreach ($types as $type)
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>{{$type->id}}</th>
+                                <th>{{$type->name}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                @endforeach
+            </div>
+        </div>
+        <div class="col-2"></div>
     </div>
 </div>
 

@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title','Tipos de Suplementos')
 @section('body')
-dd{{$types}}
 <div class="container">
     <div class="row">
         <div id="opcionesFood" class="col-8">
