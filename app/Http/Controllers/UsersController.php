@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Permission;
+use App\Models\PermissionUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -10,9 +11,11 @@ use App\Models\User;
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::all();
+        $users = User::with('permissions_user','permission_level')->get();
+        dump($users);
         $permissions = Permission::all();
-        return view('users.index',compact('users','permissions'));
+        $permission_user = PermissionUser::all();
+        return view('users.index',compact('users','permissions','permission_user'));
     }
     public function view($id){
         $user = User::findOrFail($id);

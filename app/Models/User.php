@@ -43,10 +43,14 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+
     public function permission_user(){
-        return $this->belongsTo(PermissionUser::class);
+        return $this->hasMany(PermissionUser::class);
     }
-    public function Permission(){
+    public function permissions_user(){
+        return $this->hasOne(PermissionUser::class);
+    }
+    public function permission_level(){
         return $this->belongsTo(Permission::class);
     }
 }
