@@ -7,8 +7,7 @@
             <a class = "btn btn-success mr-5" href="{{route ('users.create')}}">Añadir</a>
         </div>
     </div>
-    dd{{$permissions}}
-    dd{{$permission_user}}
+
     <hr class="hr-orange-lg">
     <div class="row">
         <div class="card px-5 mb-3">
@@ -26,7 +25,11 @@
                     <tr>
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
-                        <td>{{$user->permissions_user->permission_id}}</td>                        
+                        <td>
+                            @foreach($user->permissions as $permission)
+                            {{$permission->level}}<br>
+                            @endforeach
+                        </td>                        
                         <td>{{$user->phone}}</td>
                         <td>{{$user->email}}</td>
                         <td><img id = "imgUsuarios" class="img-fluid text-center" src="{{$user->image}}" alt=""></td>

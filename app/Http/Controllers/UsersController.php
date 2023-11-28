@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Access;
 use App\Models\Permission;
-use App\Models\PermissionUser;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -11,11 +11,9 @@ use App\Models\User;
 class UsersController extends Controller
 {
     public function index(){
-        $users = User::with('permissions_user','permission_level')->get();
-        dump($users);
-        $permissions = Permission::all();
-        $permission_user = PermissionUser::all();
-        return view('users.index',compact('users','permissions','permission_user'));
+        $users = User::get();
+      
+        return view('users.index',compact('users'));
     }
     public function view($id){
         $user = User::findOrFail($id);

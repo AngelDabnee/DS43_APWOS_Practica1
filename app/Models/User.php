@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Access;
 
 class User extends Authenticatable
 {
@@ -44,13 +45,9 @@ class User extends Authenticatable
     ];
 
 
-    public function permission_user(){
-        return $this->hasMany(PermissionUser::class);
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class, 'permission_user');
     }
-    public function permissions_user(){
-        return $this->hasOne(PermissionUser::class);
-    }
-    public function permission_level(){
-        return $this->belongsTo(Permission::class);
-    }
+
 }

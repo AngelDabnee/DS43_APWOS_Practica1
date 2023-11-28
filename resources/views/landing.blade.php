@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active text-black" aria-current="page" href="#nutricion">TIPO DE NUTRIENTES</a>
+                            <a class="nav-link active text-black" aria-current="page" href="{{route('nutrients.list')}}">DICCIONARIOS DE NUTRIENTES</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-black" aria-current="page" href="#mitos">MITOS</a>
@@ -52,7 +52,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="textRed">¿Sabes Cómo Porcionar tu Plato? </h5>
               <p class="textRed">El Plato del Bien Comer, es un indicador de racionamiento alimentario</p>
-              <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+              <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="{{route('foods.list')}}">¿Quieres Saber Más?</a>
             </div>
           </div>
           <div class="carousel-item">
@@ -68,7 +68,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="textRed">¿Sabes que son los MacronNutrientes?</h5>
                 <p class="textRed">Son compuestos químicos formados principalmente por Carbono, Oxígeno e Hidrógeno</p>
-                <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+                <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="{{route('compositions.list')}}">¿Quieres Saber Más?</a>
             </div>
           </div>
         </div>
@@ -326,7 +326,7 @@
                     </p>
                 </div>
                 <div class="col-md-2 my-5 ms-auto align-self-end right"> 
-                    <button id = "btnSuplementos" class="btn btn-outline-danger"><a class = "nav-link active text-black" aria-current="page" href="#">Conoce Más</a>
+                    <button id = "btnSuplementos" class="btn btn-outline-danger"><a class = "nav-link active text-black" aria-current="page" href="{{route('suplements.list')}}">Conoce Más</a>
                     </button>
                 </div>
             </div>
@@ -348,33 +348,35 @@
         </div>
     </div>
     <!--onceava parte--->
-    <div id = "onceaba" class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <hr class="hr-orange-lg">
-                <div class="col-lg-6 col-sm-12">
-                    <h5 id = "tituloInfoPag" class="text-center mb-5">Información de la Página</h5>
-                    <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
-                        <li>Macro Nutrientes</li>
-                        <li>Micro Nutrientes</li>
-                        <li>Mitos</li>
-                        <li>Beneficios</li>
-                        <li>Proteina</li>
-                        <li>Lípidos</li>
-                        <li>Hidratos de Carbono</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <h5 id = "tituloContacto" class="text-center mb-5">Contacto</h5>
-                    <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
-                        <li>Celular : +52 665588</li>
-                        <li>Correo: A@gmail.com</li>
-                        <li>Facebook</li>
-                        <li>Twiter</li>
-                    </ul>
+    <section id = "sectionContact">
+        <div id = "onceaba" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <hr class="hr-orange-lg">
+                    <div class="col-lg-6 col-sm-12">
+                        <h5 id = "tituloInfoPag" class="text-center mb-5">Información de la Página</h5>
+                        <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
+                            <li>Macro Nutrientes</li>
+                            <li>Micro Nutrientes</li>
+                            <li>Mitos</li>
+                            <li>Beneficios</li>
+                            <li>Proteina</li>
+                            <li>Lípidos</li>
+                            <li>Hidratos de Carbono</li>
+                        </ul>
+                    </div>
+                    <div id = "sectionContact" class="col-lg-6 col-sm-12">
+                        <h5 id = "tituloContacto" class="text-center mb-5">Contacto</h5>
+                        <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
+                            <li>Celular : +52 665588</li>
+                            <li>Correo: A@gmail.com</li>
+                            <li>Facebook</li>
+                            <li>Twiter</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+    </section>
     </div>
 
     @endsection

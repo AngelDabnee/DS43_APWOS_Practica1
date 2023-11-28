@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\CompositionController;
 use App\Http\Controllers\FoodGroupController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuplementController;
 use App\Http\Controllers\TypeSuplement;
 use App\Http\Controllers\TypeSuplementController;
@@ -21,12 +22,17 @@ use App\Http\Controllers\TypeSuplementController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('landing');
-});
+});*/
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'landing'])->name('landing');
+
+
+
 
 //usuarios, con el controlador de usuario. 
 Route::prefix('/users')-> group(function () {
