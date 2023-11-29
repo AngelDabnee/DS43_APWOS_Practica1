@@ -45,7 +45,18 @@ class FoodController extends Controller
         'img.required' => 'Necesita capturar todos los campos',
         'description.required' => 'Necesita capturar todos los campos',
     ]);
+        $foods = Food::create([
+            'name'=> $validated['name'],
+            'img'=> $validated['img'],
+            'description'=> $validated['description'],
+            'composition_id'=>$validated['composition_id']
+        ]);
+        //dd($foods);
+        if($foods){
+            return redirect(route('foods.list'));
 
-        return redirect(route('foods.create'));
+        }else{
+            return redirect(route('foods.create'));
+        }
     }
 }
