@@ -34,13 +34,34 @@ class SuplementController extends Controller
     }
     public function store(Request $request){
         $validated = $request->validate([
-            'name',
-            'type_id',
-            'effects',
-            'benefits',
-            'dosis',
-            'risk',
-            'img',
+            'name' => 'required',
+            'type_id' => 'required|numeric',
+            'effects'=>'required',
+            'benefits'=>'required',
+            'dosis'=>'required',
+            'risk'=>'required',
+            'img'=>'required',
+        ],[
+            'name.required'=>'Debe capturar el nombre',
+            'type_id.numeric'=>'No se permite modificar los valores asignados',
+            'effects.required'=>'Debe capturar el campo',
+            'benefitis.required'=>'Debe capturar el campo',
+            'dosis.required'=>'Debe capturar el campo',
+            'risk.required'=>'Debe capturar el campo',
+            'img.required'=>'Debe capturar el campo'
         ]);
+        $suplement = Suplement::create([
+            'name' => $validated['name'],
+            'type_id' => $validated['type_id'],
+            'effects' => $validated['effects'],
+            'benefits' => $validated['benefits'],
+            'dosis' => $validated['dosis'],
+            'risk' => $validated['risk'],
+            'img' => $validated['img']
+        ]);
+        if($suplement){
+            return redirect(route('suplements.list'));
+        }else{}
+        return redirect(route('suplements.create'));
     }
 }

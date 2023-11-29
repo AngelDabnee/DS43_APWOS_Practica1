@@ -42,6 +42,9 @@ class FoodGroupController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'food_id' => 'required|numeric'
+        ],[
+            'name.required'=>'Captura el Nombre',
+            'food_id.numeric'=>'No se permite modificar los valores asignados'
         ]);
         $group = FoodGroup::create([
             'name'=> $validated['name'],

@@ -20,6 +20,9 @@
                 @csrf
                 <label>Nombre</label>
                 <input type="text" name="name" id="" class="form-control" required>
+                @if ($errors->has('name'))
+                    <p class="text-danger">{{$errors->first('name')}}</p>
+                @endif
                 <label>Tipo</label>
                 <select name="type_id" class="form-control">
                     <option>Seleciona el Tipo de Suplemento</option>
@@ -27,16 +30,34 @@
                         <option id = "typeSuplement" value="{{$type->id}}">{{$type ->name}}</option>
                     @endforeach
                 </select>
+                @if ($errors->has('type_id'))
+                    <p class="text-danger">{{$errors->first('type_id')}}</p>
+                @endif
                 <label>Efectos</label>
                 <input type="text" name="effects" id="" class="form-control" required>
+                @if ($errors->has('effects'))
+                    <p class="text-danger">{{$errors->first('effects')}}</p>
+                @endif
                 <label>Beneficios</label>
                 <input type="text" name="benefits" id="" class="form-control" required>
+                @if ($errors->has('benefits'))
+                    <p class="text-danger">{{$errors->first('benefits')}}</p>
+                @endif
                 <label>Dosis Recomendada</label>
                 <input type="text" name="dosis" id="" class="form-control" required>
+                @if ($errors->has('dosis'))
+                    <p class="text-danger">{{$errors->first('dosis')}}</p>
+                @endif
                 <label>Riesgos del Consumo</label>
                 <input type="text" name="risk" id="" class="form-control" required>
+                @if ($errors->has('risk'))
+                    <p class="text-danger">{{$errors->first('risk')}}</p>
+                @endif
                 <label>Imagen</label>
                 <input type="text" name="img" id="" class="form-control" placeholder="Dirección URL de la Imagen" required>
+                @if ($errors->has('img'))
+                    <p class="text-danger">{{$errors->first('img')}}</p>
+                @endif
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>
         </div>

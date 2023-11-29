@@ -42,6 +42,10 @@ class NutrientController extends Controller
             'food_id' => 'required|numeric',
             'composition_id' => 'required|numeric',
             'description'=>'required'
+        ],[
+            'food_id.numeric'=>'No se permite modificar los valores asignados',
+            'composition_id.numeric'=>'No se permite modificar los valores asignados',
+            'description.required'=>'Falta capturar la descripcion',
         ]);
         $nutrient = Nutrient::create([
             'food_id'=>$validated['food_id'],

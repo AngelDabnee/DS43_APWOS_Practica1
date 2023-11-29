@@ -9,6 +9,16 @@ use App\Models\TypeSuplement;
 class Suplement extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'type_id',
+        'effects',
+        'benefits',
+        'dosis',
+        'risk',
+        'img'
+    ];
     public function type(){
         return $this->belongsTo(TypeSuplement::class);
     }

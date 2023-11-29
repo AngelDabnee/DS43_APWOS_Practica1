@@ -12,7 +12,7 @@
         </div>
     </div>
     <hr class="hr-orange-lg">
-    <div class="col-12">
+    <div class="col-12 m-5">
         <div class="card px-5">
             <table id="tablaSuplements" class="table table-responsive table-bordered">
                 <thead>
