@@ -12,6 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 class Nutrient extends Model
 {
     use HasFactory;
+    
+    protected $fillable= [
+        'food_id',
+        'composition_id',
+        'description'
+    ];
+
     public function composition(){
         return $this->belongsTo(Composition::class);
     }

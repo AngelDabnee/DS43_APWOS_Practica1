@@ -17,12 +17,15 @@
             <form method="POST" action="{{route('nutrients.store')}}">
                 @csrf
                 <label>Selecciona un Alimento del Ábanico de Posibilidades</label>
-                <select name="composition_id" class="form-control">
+                <select name="food_id" class="form-control">
                     <option>Selecciona el Alimento</option>
                     @foreach ($foods as $food)
                         <option value = "{{$food->id}}">{{$food->name}}</option>
                     @endforeach
                 </select>
+                @if ($errors->has('food_id'))
+                    <p class="text-danger">{{$errors->first('food_id')}}</p>
+                @endif
                 <label>Composición Nutricional de MacroNutriente</label>
                 <select name="composition_id" class="form-control">
                     <option>Seleccione el Componente Nutricional</option>
@@ -30,8 +33,14 @@
                         <option value = "{{$composition->id}}">{{$composition->name}}</option>
                     @endforeach
                 </select>
+                @if ($errors->has('composition_id'))
+                    <p class="text-danger">{{$errors->first('composition_id')}}</p>
+                @endif
                 <label>Descripción</label>
                 <input type="text" name = "description" class="form-control">
+                @if ($errors->has('description'))
+                    <p class="text-danger">{{$errors->first('description')}}</p>
+                @endif
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>
         </div>

@@ -32,4 +32,15 @@ class SuplementController extends Controller
         $types = TypeSuplement::all();
         return view('suplements.create',compact('suplements', 'types'));
     }
+    public function store(Request $request){
+        $validated = $request->validate([
+            'name',
+            'type_id',
+            'effects',
+            'benefits',
+            'dosis',
+            'risk',
+            'img',
+        ]);
+    }
 }

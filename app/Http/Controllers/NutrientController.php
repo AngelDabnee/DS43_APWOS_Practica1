@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Nutrient;
 use App\Models\Food;
-
 use App\Http\Controllers\findOrFail;
 use App\Models\Composition;
+use Illuminate\Http\Request;
+
 
 class NutrientController extends Controller
 {
@@ -35,5 +36,23 @@ class NutrientController extends Controller
         $compositions = Composition::all();
         $foods = Food::all();
     return view('nutrients.create',compact ('compositions','foods'));
+    }
+    public function store(Request $request){
+        $validated = $request->validate([
+            'food_id' => 'required|numeric',
+            'composition_id' => 'required|numeric',
+            'description'=>'required'
+        ]);
+        $nutrient = Nutrient::create([
+            'food_id'=>$validated['food_id'],
+            'composition_id'=>$validated['composition_id'],
+            'description'=>$validated['description'],
+        ]);
+        //dd($nutrient);
+        if($nutrient){
+            return redirect(route('nutrients.list'));
+        }else{
+            return redirect(route('nutrients.create'));
+        }
     }
 }

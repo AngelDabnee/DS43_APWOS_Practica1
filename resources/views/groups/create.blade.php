@@ -16,6 +16,9 @@
                 <div class="card py-3 text-center">
                     <label>Nombre del Nuevo Grupo de Alimentos</label>
                     <input type="text" name = "name" class="form-control" required>
+                    @if ($errors->has('name'))
+                    <p class="text-danger">{{$errors->first('name')}}</p>                        
+                    @endif
                     <label>Alimento</label>
                     <select name="food_id" id="" class = "form-control" required>
                         <option value="">Selecciona un Alimento Representante</option>
@@ -23,6 +26,9 @@
                             <option value="{{$food->id}}">{{$food->name}}</option>
                         @endforeach
                     </select>
+                    @if ($errors->has('name'))
+                        <p class="text-danger">{{$errors->first('food_id')}}</p>                        
+                    @endif
                 </div>
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>
