@@ -12,11 +12,14 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <form action="POST" method="{{route('compositions.store')}}">
+            <form method="POST" action="{{route ('compositions.store')}}">
                 @csrf
                 <div class="card text-center px-3">
-                    <label>Nuevo Nombre del Grupo</label>
+                    <label>Nuevo Componente Nutricional</label>
                     <input type="text" name="name" class="form-control" required>
+                    @if ($errors->has('name'))
+                    <p class="text-danger">{{$errors->first('name')}}</p>                        
+                    @endif
                 </div>
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>

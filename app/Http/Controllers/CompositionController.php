@@ -29,4 +29,21 @@ class CompositionController extends Controller
      public function create(){
          return view('compositions.create');
      }
+     public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required'
+        ],['name.requiered'=> 'Necesita capturar un nombre válido']);
+
+        $composition = Composition::create([
+           'name'=>$validated['name'] 
+        ]);
+        //dd($composition);
+        if($composition){
+            return redirect(route('compositions.list'));
+        }else{
+            return redirect(route('compositions.create'));
+
+        }
+
+     }
 }

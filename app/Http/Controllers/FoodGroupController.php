@@ -37,6 +37,20 @@ class FoodGroupController extends Controller
         $compositions = Composition::all();  
         $foods = Food::all();
         return view('groups.create',compact('foods','compositions'));
-        
+    }
+    public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required',
+            'food_id' => 'required|numeric'
+        ]);
+        $group = FoodGroup::create([
+            'name'=> $validated['name'],
+            'food_id'=> $validated['food_id']
+        ]);
+        if($group){
+            return redirect(route('groups.list'));
+        }else{
+            return redirect(route('groups.create'));
+        }
     }
 }

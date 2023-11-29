@@ -27,17 +27,17 @@
                     <label>Nombre</label>
                     <input type="text" name = "name" class="form-control" placeholder="Nombre del Alimento" required>
                     @if ($errors->has('name'))
-                        <p class="text-danger">{{$errors->frist('name')}}</p>                        
+                        <p class="text-danger">{{$errors->first('name')}}</p>                        
                     @endif
                     <label>URL de la Imagen</label>
                     <input type="text" name="img" class="form-control" placeholder="Imagen del Alimento">
                     @if ($errors->has('img'))
-                        <p class="text-danger">{{$errors->frist('img')}}</p>                        
+                        <p class="text-danger">{{$errors->first('img')}}</p>                        
                     @endif
                     <label>Descripción</label>
                     <input type="text" name = "description" class="form-control" placeholder="Descripción" required>
                     @if ($errors->has('description'))
-                        <p class="text-danger">{{$errors->frist('description')}}</p>                        
+                        <p class="text-danger">{{$errors->first('description')}}</p>                        
                     @endif
                     <label>Composición Nutricional</label>
                     <select name="composition_id" id="" class = "form-control" required>
@@ -47,7 +47,7 @@
                         @endforeach
                     </select>
                     @if ($errors->has('composition_id'))
-                        <p class="text-danger">{{$errors->frist('composition_id')}}</p>                        
+                        <p class="text-danger">{{$errors->first('composition_id')}}</p>                        
                     @endif
                     <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
                 </div>

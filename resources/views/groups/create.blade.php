@@ -18,7 +18,7 @@
                     <input type="text" name = "name" class="form-control" required>
                     <label>Alimento</label>
                     <select name="food_id" id="" class = "form-control" required>
-                        <option value="">Selecciona un Alimento</option>
+                        <option value="">Selecciona un Alimento Representante</option>
                         @foreach ($foods as $food)
                             <option value="{{$food->id}}">{{$food->name}}</option>
                         @endforeach
