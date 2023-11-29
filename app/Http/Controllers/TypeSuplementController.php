@@ -28,4 +28,19 @@ class TypeSuplementController extends Controller
         $types = TypeSuplement::all();
         return view('typesuplements.create',compact('types'));
     }
+    public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required'
+        ],[
+            'name.required'=>'Favor de capturar un nombre valido'
+        ]);
+        $typeSuplement = TypeSuplement::create([
+            'name'=> $validated['name']
+        ]);
+        if($typeSuplement){
+            return  redirect(route('typesuplements.list'));
+        }else{
+            return redirect(route('typesuplements.create'));
+        }
+    }
 }

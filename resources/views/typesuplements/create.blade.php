@@ -16,6 +16,9 @@
                     @csrf
                     <label>Nombre del Grupo</label>
                     <input type="text" name="name" class="form-control" required>
+                    @if ($errors->has('name'))
+                        <p class="text-danger">{{$errors->first('name')}}</p>
+                    @endif
                     <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
                 </form>
             </div>

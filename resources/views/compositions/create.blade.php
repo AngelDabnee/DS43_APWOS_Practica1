@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','update')
+@section('title','create')
 @section('body')
 <div class="container">
     <div class="row">
@@ -9,12 +9,11 @@
         </div>
     </div>
     <hr class="hr-orange-lg">
-    <div class="row">
-        <div class="col-3"></div>
+    <div class="row m-3">
         <div class="col-6">
             <form method="POST" action="{{route ('compositions.store')}}">
                 @csrf
-                <div class="card text-center px-3">
+                <div class="card text-center px-5">
                     <label>Nuevo Componente Nutricional</label>
                     <input type="text" name="name" class="form-control" required>
                     @if ($errors->has('name'))
@@ -24,7 +23,11 @@
                 <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
             </form>
         </div>
-        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <img src="https://cdn-v1.udocz-assets.com/uploads/book/cover/544461/544461.jpg" alt="">
+            </div>
+        </div>
     </div>
 </div>
 @endsection
