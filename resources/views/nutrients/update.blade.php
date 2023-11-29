@@ -16,7 +16,7 @@
             <img src="https://thefoodtech.com/wp-content/uploads/2023/07/alimentos-saludables.jpg" class="img-fluid">
         </div>
         <div class="col-5 card text-center mb-2">
-            <form action="POST" method="{{route('nutrients.update',$nutrient)}}">
+            <form method="POST" action="{{route('nutrients.update',$nutrient)}}">
                 @csrf
                 <label>Selecciona un Alimento del Ábanico de Posibilidades</label>
                 <select name="food_id" class="form-control">

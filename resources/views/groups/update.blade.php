@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-12 m-3 text-center">
             <div class="card">
-                <form action="POST" method="{{route('groups.update',$groupFood)}}">
+                <form method="POST" action="{{route('groups.update',$groupFood)}}">
                     @csrf
                     <label>Nombre del Grupo de Alimentos</label>
                     <input type="text" name="name" class = "form-control" placeholder="{{$groupFood->name}}" required>

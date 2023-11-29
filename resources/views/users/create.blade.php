@@ -17,7 +17,7 @@
         <div class="col-2">
         </div>
         <div class="col-6 card  text-center mb-2">
-            <form action="POST" method="{{route('users.store')}}">
+            <form method="POST" action="{{route('users.store')}}">
                 @csrf
                 <label>Nombre Completo</label>
                 <input type="text" name="name" class="form-control" placeholder="Nombre Completo" required>

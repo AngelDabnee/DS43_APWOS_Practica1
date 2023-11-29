@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-5">
             <div class="card text-center">
-                <form action="POST" method="{{route('typesuplements.store')}}">
+                <form method="POST" action="{{route('typesuplements.store')}}">
                     @csrf
                     <label>Nombre del Grupo</label>
                     <input type="text" name="name" class="form-control" required>

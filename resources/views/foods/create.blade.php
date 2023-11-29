@@ -11,15 +11,34 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <form action="POST" method="{{route ('foods.store')}}">
-                @csrf
+            @if ($errors->any())
+                <div class="alrt alert-danger">
+                    <p class="bold">Errores Encontrados
+                        @foreach ($errors->all() as $error)
+                            <p><li>{{$error}}</li></p>
+                        @endforeach
+                    </p>
+                </div>
+               
+            @endif
+            <form method="POST" action="{{route ('foods.store')}}">
+                @csrf   
                 <div id = "cardFoods" class="card text-center">
                     <label>Nombre</label>
                     <input type="text" name = "name" class="form-control" placeholder="Nombre del Alimento" required>
+                    @if ($errors->has('name'))
+                        <p class="text-danger">{{$errors->frist('name')}}</p>                        
+                    @endif
                     <label>URL de la Imagen</label>
                     <input type="text" name="img" class="form-control" placeholder="Imagen del Alimento">
+                    @if ($errors->has('img'))
+                        <p class="text-danger">{{$errors->frist('img')}}</p>                        
+                    @endif
                     <label>Descripción</label>
                     <input type="text" name = "description" class="form-control" placeholder="Descripción" required>
+                    @if ($errors->has('description'))
+                        <p class="text-danger">{{$errors->frist('description')}}</p>                        
+                    @endif
                     <label>Composición Nutricional</label>
                     <select name="composition_id" id="" class = "form-control" required>
                         <option value="">Selecciona la Composición</option>
@@ -27,6 +46,9 @@
                             <option value="{{$composition->id}}">{{$composition->name}}</option>
                         @endforeach
                     </select>
+                    @if ($errors->has('composition_id'))
+                        <p class="text-danger">{{$errors->frist('composition_id')}}</p>                        
+                    @endif
                     <button class="btn btn-lg btn-success mt-3" type="submit">Confirmar</button>
                 </div>
             </form>

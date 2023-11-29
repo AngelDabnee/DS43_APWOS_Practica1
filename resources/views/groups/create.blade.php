@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <form action="POST" method="{{route('groups.store')}}">
+            <form method="POST" action="{{route('groups.store')}}">
                 @csrf
                 <div class="card py-3 text-center">
                     <label>Nombre del Nuevo Grupo de Alimentos</label>

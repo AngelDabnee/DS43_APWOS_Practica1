@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-6 mb-3 mt-3">
             <div class="card text-center mb-2">
-                <form action="POST" method="{{route('foods.update',$foods)}}">
+                <form method="POST" action="{{route('foods.update',$foods)}}">
                     @csrf
                     <label>Nombre</label>
                     <input class = "form-control" type="text" name="name" placeholder="{{$foods->name}}" required>

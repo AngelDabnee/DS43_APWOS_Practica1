@@ -18,7 +18,7 @@
             </div>
             <div class="col-8 px-5">
                 <div class="card text-center">
-                    <form action="POST" method="{{route('suplements.update',$suplements)}}">
+                    <form method="POST" action="{{route('suplements.update',$suplements)}}">
                         @csrf
                         <label>Nombre</label>
                         <input type="text" name="name" class="form-control" placeholder="{{$suplements->name}}" required>

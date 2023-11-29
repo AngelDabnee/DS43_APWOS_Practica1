@@ -14,7 +14,7 @@
         <div class="col-7">
             <div class="card text-center px-5 mb-3">
                 <h3 class="mt-2">Modificaremos a: {{$types->name}};</h3>
-                <form action="POST" method="{{route('typesuplements.update',$types->id)}}">
+                <form method="POST" action="{{route('typesuplements.update',$types->id)}}">
                     @csrf
                     <label>Nuevo Nombre del Grupo</label>
                     <input type="text" name="name" class="form-control" required>
