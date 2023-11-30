@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active text-black" aria-current="page" href="#nutricion">TIPO DE NUTRIENTES</a>
+                            <a class="nav-link active text-black" aria-current="page" href="{{route('nutrients.list')}}">DICCIONARIOS DE NUTRIENTES</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-black" aria-current="page" href="#mitos">MITOS</a>
@@ -52,7 +52,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="textRed">¿Sabes Cómo Porcionar tu Plato? </h5>
               <p class="textRed">El Plato del Bien Comer, es un indicador de racionamiento alimentario</p>
-              <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+              <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="{{route('foods.list')}}">¿Quieres Saber Más?</a>
             </div>
           </div>
           <div class="carousel-item">
@@ -68,7 +68,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="textRed">¿Sabes que son los MacronNutrientes?</h5>
                 <p class="textRed">Son compuestos químicos formados principalmente por Carbono, Oxígeno e Hidrógeno</p>
-                <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+                <button class="btn btn-outline-light"><a class = "nav-link active text-black" aria-current="page" href="{{route('compositions.list')}}">¿Quieres Saber Más?</a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                             <a class = "nav-link active text-black" aria-current="page" href="#">Lípidos</a>
                         </li>
                     </ul>
-                    <button id = "btnMacro" class="btn btn-outline-info mb-3"><a class = "nav-link active text-black" aria-current="page" href="#macroNutrientes">¿Quieres Saber Más?</a>
+                    <button id = "btnMacro" class="btn btn-outline-info mb-3"><a class = "nav-link active text-black" aria-current="page" href="{{route('nutrients.list')}}">¿Quieres Saber Más?</a>
                 </div>
                 <div id = "seccionMacro" class="col-md-3 col-sm-12 text-center py-5">
                     <img src="https://static.wixstatic.com/media/d7291c_b9ab6ce969b2409cb207ee255e6939c1~mv2.png/v1/fill/w_921,h_514,al_c,q_90,enc_auto/d7291c_b9ab6ce969b2409cb207ee255e6939c1~mv2.png" class="img-fluid" alt="">
@@ -111,7 +111,7 @@
                 <div class="col-md-3 col-sm-12">
                     <h4 id = "titleMicro" class="title mb-3">MicroNutrientes</h4>
                     <p id = "parrafoMicro" >Los micronutrientes, generalmente derivados de la ingesta de alimentos, son pequeñas cantidades de vitaminas y minerales requeridos por el cuerpo para la mayoría de las funciones celulares.</p>
-                    <button id = "btnMicro" class="btn btn-outline-info"><a class = "nav-link active text-black" aria-current="page" href="#microNutrientes">¿Quieres Saber Más?</a>
+                    <button id = "btnMicro" class="btn btn-outline-info"><a class = "nav-link active text-black" aria-current="page" href="{{route('nutrients.list')}}">¿Quieres Saber Más?</a>
                 </div>
                 <div class="col-md-3 col-sm-12">
                     <img src="{{asset('/images/micronutrientes.jpg')}}" class="img-fluid" alt="">
@@ -167,7 +167,7 @@
                         <div class="card-body">
                             <h5 class="mt-3 text-black">Té de Canela</h5>
                             <p id = "parrafoCanela" class="my-3 text-black">Ayuda al control de la Diabetes, además de que tiene propiedades antioxidantes que fortalecen el sistema inmunológico y ayudan a prevenir cáncer y enfermedades del corazón.</p>
-                            <button id = "btnCanela" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+                            <button id = "btnCanela" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="{{route('foods.list')}}">¿Quieres Saber Más?</a>
                             </button>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                         <div class="card-body">
                             <h5 class="mt-3 text-black">¿Sabes los Beneficios del Consumo?</h5>
                             <p id = "parrafoFibra" class="my-3 text-black">Ayuda a Reducir el Colesterol en la Sangre</p>
-                            <button id = "btnFibra" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+                            <button id = "btnFibra" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="{{route('foods.list')}}">¿Quieres Saber Más?</a>
                             </button>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
                         <div class="card-body">
                             <h5 class="mt-3 text-black">¿Cónocias esto del consumo de Jamaica?</h5>
                             <p id = "parrafoJamaica" class="my-3 text-black">La flor de jamaica, contiene vitaminas (A, C, B1, E) y minerales como el hierro, fosfato y calcio. Es una fibra natural, conteniendo propiedades antioxidantes, antisépticas, purgativas, diuréticas, astringentes, emolientes y sedantes.</p>
-                            <button id = "btnJamaica" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="#">¿Quieres Saber Más?</a>
+                            <button id = "btnJamaica" class="btn btn-link"><a class = "nav-link active text-black" aria-current="page" href="{{route('foods.list')}}">¿Quieres Saber Más?</a>
                             </button>
                         </div>
                     </div>
@@ -326,7 +326,7 @@
                     </p>
                 </div>
                 <div class="col-md-2 my-5 ms-auto align-self-end right"> 
-                    <button id = "btnSuplementos" class="btn btn-outline-danger"><a class = "nav-link active text-black" aria-current="page" href="#">Conoce Más</a>
+                    <button id = "btnSuplementos" class="btn btn-outline-danger"><a class = "nav-link active text-black" aria-current="page" href="{{route('suplements.list')}}">Conoce Más</a>
                     </button>
                 </div>
             </div>
@@ -348,33 +348,35 @@
         </div>
     </div>
     <!--onceava parte--->
-    <div id = "onceaba" class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <hr class="hr-orange-lg">
-                <div class="col-lg-6 col-sm-12">
-                    <h5 id = "tituloInfoPag" class="text-center mb-5">Información de la Página</h5>
-                    <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
-                        <li>Macro Nutrientes</li>
-                        <li>Micro Nutrientes</li>
-                        <li>Mitos</li>
-                        <li>Beneficios</li>
-                        <li>Proteina</li>
-                        <li>Lípidos</li>
-                        <li>Hidratos de Carbono</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <h5 id = "tituloContacto" class="text-center mb-5">Contacto</h5>
-                    <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
-                        <li>Celular : +52 665588</li>
-                        <li>Correo: A@gmail.com</li>
-                        <li>Facebook</li>
-                        <li>Twiter</li>
-                    </ul>
+    <section id = "sectionContact">
+        <div id = "onceaba" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <hr class="hr-orange-lg">
+                    <div class="col-lg-6 col-sm-12">
+                        <h5 id = "tituloInfoPag" class="text-center mb-5">Información de la Página</h5>
+                        <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
+                            <li>Macro Nutrientes</li>
+                            <li>Micro Nutrientes</li>
+                            <li>Mitos</li>
+                            <li>Beneficios</li>
+                            <li>Proteina</li>
+                            <li>Lípidos</li>
+                            <li>Hidratos de Carbono</li>
+                        </ul>
+                    </div>
+                    <div id = "sectionContact" class="col-lg-6 col-sm-12">
+                        <h5 id = "tituloContacto" class="text-center mb-5">Contacto</h5>
+                        <ul id = "listaColumna" class="list-unstyled lista-columns border-separacion">
+                            <li>Celular : +52 665588</li>
+                            <li>Correo: A@gmail.com</li>
+                            <li>Facebook</li>
+                            <li>Twiter</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+    </section>
     </div>
 
     @endsection

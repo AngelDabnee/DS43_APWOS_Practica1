@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Nutrient;
+use App\Models\Food;
 use App\Http\Controllers\findOrFail;
 use App\Models\Composition;
+use Illuminate\Http\Request;
+
 
 class NutrientController extends Controller
 {
@@ -20,7 +23,8 @@ class NutrientController extends Controller
     public function update($id){
         $nutrient = Nutrient::findOrFail($id);
         $compositions = Composition::all();
-        return view('nutrients.update',compact ('compositions','nutrient'));
+        $foods = Food::all();
+        return view('nutrients.update',compact ('compositions','nutrient','foods'));
     }
     public function delete(){
         return view('nutrients.delete');
@@ -30,7 +34,29 @@ class NutrientController extends Controller
     }
     public function create(){
         $compositions = Composition::all();
-
-    return view('nutrients.create',compact ('compositions'));
+        $foods = Food::all();
+    return view('nutrients.create',compact ('compositions','foods'));
+    }
+    public function store(Request $request){
+        $validated = $request->validate([
+            'food_id' => 'required|numeric',
+            'composition_id' => 'required|numeric',
+            'description'=>'required'
+        ],[
+            'food_id.numeric'=>'No se permite modificar los valores asignados',
+            'composition_id.numeric'=>'No se permite modificar los valores asignados',
+            'description.required'=>'Falta capturar la descripcion',
+        ]);
+        $nutrient = Nutrient::create([
+            'food_id'=>$validated['food_id'],
+            'composition_id'=>$validated['composition_id'],
+            'description'=>$validated['description'],
+        ]);
+        //dd($nutrient);
+        if($nutrient){
+            return redirect(route('nutrients.list'));
+        }else{
+            return redirect(route('nutrients.create'));
+        }
     }
 }

@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class FoodGroup extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'name',
+        'food_id'
+    ];
+
     public function composition(){
         return $this->belongsTo(Composition::class);
     }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Composition;
 use App\Models\Food;
-
+use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
@@ -32,5 +32,31 @@ class FoodController extends Controller
         $compositions = Composition::all();  
         return view('foods.create',compact('compositions'));
         
+    }
+    public function store(Request $request){
+        //dd($request);
+        $validated = $request->validate([
+            'name' => 'required',
+            'img' => 'required',
+            'description' =>'required',
+            'composition_id' => 'required|numeric',
+        ],['composition_id.numeric'=>'No se permite modificar los valores asignados',
+        'name.required' => 'Necesita capturar todos los campos',
+        'img.required' => 'Necesita capturar todos los campos',
+        'description.required' => 'Necesita capturar todos los campos',
+    ]);
+        $foods = Food::create([
+            'name'=> $validated['name'],
+            'img'=> $validated['img'],
+            'description'=> $validated['description'],
+            'composition_id'=>$validated['composition_id']
+        ]);
+        //dd($foods);
+        if($foods){
+            return redirect(route('foods.list'));
+
+        }else{
+            return redirect(route('foods.create'));
+        }
     }
 }
