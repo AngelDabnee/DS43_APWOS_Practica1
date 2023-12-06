@@ -17,20 +17,69 @@ class FoodController extends Controller
        $food = Food::find($id);
         return view('foods.view',compact ('food'));
     }
-    public function update($id){
+    public function edit($id){
         $foods = Food::find($id);
         $compositions = Composition::all();
-        return view('foods.update',compact('foods','compositions'));
+        return view('foods.create',compact('foods','compositions'));
     }
-    public function delete(){
-        return view('foods.delete');
+    public function update(Request $request){
+        $validated = $request->validate([
+            'id'=>'required|numeric',
+            'name' => 'required',
+            'img' => 'required',
+            'description' =>'required',
+            'composition_id' => 'required|numeric',
+        ],['composition_id.numeric'=>'No se permite modificar los valores asignados',
+        'id.required'=>'No se permite modificar los valores asignados',
+        'name.required' => 'Necesita capturar todos los campos',
+        'img.required' => 'Necesita capturar todos los campos',
+        'description.required' => 'Necesita capturar todos los campos',
+    ]);
+        $foods = Food::findOrFail($validated['id']);
+        
+            $foods->name=$validated['name'];
+            $foods->img=$validated['img'];
+            $foods->description= $validated['description'];
+            $foods->composition_id=$validated['composition_id'];
+            $foods->save();
+        
+        //dd($foods);
+        return redirect(route('foods.edit',$foods->id));
     }
-    public function terminate(){
-        return view('foods.terminate');
+    public function delete(Request $request){
+        $validated = $request->validate([
+            'id'=>'required|numeric',
+        ],[
+        'id.numeric'=>'No se permite modificar los valores asignados',
+        'id.required'=>'No se permite modificar los valores asignados',
+    ]);
+    $foods = Food::findOrFail($validated['id']);
+    $foods->delete();
+        return redirect()->back();
     }
+
+
+    public function terminate(Request $request){
+        $validated = $request->validate([
+            'id'=>'required|numeric',
+        ],[
+        'id.numeric'=>'No se permite modificar los valores asignados',
+        'id.required'=>'No se permite modificar los valores asignados',
+
+    ]);
+    $foods = Food::findOrFail($validated['id']);
+        
+    $foods->status = 0;
+    $foods->save();
+        return redirect()->back();
+    }
+
+
+
     public function create(){
+        $foods = Food::all();
         $compositions = Composition::all();  
-        return view('foods.create',compact('compositions'));
+        return view('foods.create',compact('compositions','foods'));
         
     }
     public function store(Request $request){

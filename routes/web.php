@@ -75,10 +75,14 @@ Route::prefix('/foods')-> group(function () {
     Route::get('/', [FoodController::class, 'index'])->name('foods.list');
     Route::get('/create', [FoodController::class, 'create'])->name('foods.create'); 
     Route::get('/view/{id}', [FoodController::class, 'view'])->name('foods.view');
-    Route::get('/update/{id}', [FoodController::class, 'update'])->name('foods.update');
-    Route::get('/delete/{id}', [FoodController::class, 'delete'])->name('foods.delete');
-    Route::get('/terminate/{id}', [FoodController::class, 'terminate'])->name('foods.terminate');
+    Route::get('/update/{id}', [FoodController::class, 'edit'])->name('foods.edit');
+    Route::patch('update/',[FoodController::class, 'update'])->name('foods.update');
+
+
+    Route::delete('/delete/', [FoodController::class, 'delete'])->name('foods.delete');
+    Route::patch('/terminate/', [FoodController::class, 'terminate'])->name('foods.terminate');
     Route::post('/create', [FoodController::class, 'store'])->name('foods.store');
+    
 });
 
 Route::prefix('/groups')-> group(function () {

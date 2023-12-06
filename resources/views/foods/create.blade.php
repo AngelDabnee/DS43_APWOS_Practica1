@@ -2,10 +2,14 @@
 @section('title','create')
 @section('body')
 <div class="container">
+    @if ($foods)
+        <h1 class="text-center mb-0">Actualizar al Alimento: {{$foods->name}}</h1>
+    @else
+        <h1 class="text-center mb-0">Añadir al Alimento</h1>
+    @endif
     <div id = "opcionesIniciales" class="row">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <a class = "btn btn-success" href="{{route ('foods.list')}}">Regresar</a>
-            <h1 class="text-center mb-0">Añadir al Alimento</h1>
         </div>
         <hr class="hr-orange-lg">
     </div>
@@ -21,30 +25,45 @@
                 </div>
                
             @endif
-            <form method="POST" action="{{route ('foods.store')}}">
-                @csrf   
+            @if ($foods)
+                <form method="POST" action="{{route ('foods.update') }}">
+                    @method('PATCH')
+                    <input type="hidden" name="id" value="{{$foods->id}}">
+
+            @else
+                <form method="POST" action="{{route ('foods.store') }}">
+            @endif
+
+                @csrf  
                 <div id = "cardFoods" class="card text-center">
                     <label>Nombre</label>
-                    <input type="text" name = "name" class="form-control" placeholder="Nombre del Alimento" required>
+                    <input type="text" name = "name" class="form-control" placeholder="Nombre del Alimento" value = "{{$foods->name}}" required>
                     @if ($errors->has('name'))
                         <p class="text-danger">{{$errors->first('name')}}</p>                        
                     @endif
                     <label>URL de la Imagen</label>
-                    <input type="text" name="img" class="form-control" placeholder="Imagen del Alimento">
+                    <input type="text" name="img" class="form-control" placeholder="Imagen del Alimento" value="{{$foods->img}}">
                     @if ($errors->has('img'))
                         <p class="text-danger">{{$errors->first('img')}}</p>                        
                     @endif
                     <label>Descripción</label>
-                    <input type="text" name = "description" class="form-control" placeholder="Descripción" required>
+                    <input type="text" name = "description" class="form-control" placeholder="Descripción" value="{{$foods->description}}" required>
                     @if ($errors->has('description'))
                         <p class="text-danger">{{$errors->first('description')}}</p>                        
                     @endif
                     <label>Composición Nutricional</label>
                     <select name="composition_id" id="" class = "form-control" required>
-                        <option value="">Selecciona la Composición</option>
-                        @foreach ($compositions as $composition)
-                            <option value="{{$composition->id}}">{{$composition->name}}</option>
-                        @endforeach
+
+                        @if (!$foods)
+                            <option value="">Selecciona la Composición</option>
+                        @else
+                        <option value="{{$foods->composition->id}}">{{$foods->composition->name}}</option>
+                            @foreach ($compositions as $composition)
+                                @if ($foods->composition != $composition)
+                                    <option value="{{$composition->id}}">{{$composition->name}}</option>
+                                @endif
+                            @endforeach
+                        @endif
                     </select>
                     @if ($errors->has('composition_id'))
                         <p class="text-danger">{{$errors->first('composition_id')}}</p>                        
@@ -54,28 +73,12 @@
             </form>
         </div>
         <div class="col-6 mb-3">
-            <div class="">
-                <div id="carruselFoods" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://canalsalud.imq.es/hubfs/imq-blog/alimentos-saludables.jpg" class="d-block w-100" alt="Comida 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://www.proyectosendo.es/wp-content/uploads/2020/03/verduras1.jpg" class="d-block w-100" alt="Comida 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://www.aquateknica.com/wp-content/uploads/2016/02/Alimentos-de-colores.jpg" class="d-block w-100" alt="Comida 3">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carruselFoods" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carruselFoods" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Siguiente</span>
-                    </a>
-                </div>
+            <div class="card">
+                @if ($foods->img)
+                    <img id = "imgFoodUpdate" src="{{$foods->img}}" class="img-fluid d-block w-100" >
+                @else
+                    <img src="https://canalsalud.imq.es/hubfs/imq-blog/alimentos-saludables.jpg" class="d-block w-100" alt="Comida 1">
+                @endif
             </div>
         </div>
     </div>

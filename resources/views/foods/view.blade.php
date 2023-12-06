@@ -35,7 +35,7 @@
                 </table>
             </div>
             <div id = "accionesNutrientes" class="py-4">
-                <a id = "updateNutrients" class = "btn btn-warning" href="{{route ('foods.update',$food->id)}}">Actualizar</a>
+                <a id = "updateNutrients" class = "btn btn-warning" href="{{route ('foods.edit',$food->id)}}">Actualizar</a>
             </div>
         </div>
     </div>    
